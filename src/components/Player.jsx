@@ -7,6 +7,7 @@ export const Player = () => {
 
   return (
     <div>
+      <h1 className="text-red-500 text-4xl">Youtube</h1>
       <Youtube opts={player.options} videoId={player.videoId} />
     </div>
   );

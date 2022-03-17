@@ -4,19 +4,26 @@ import songs from "../assets/songs.json";
 export const PlayerContext = createContext();
 
 const PlayerProvider = ({ children }) => {
-  const [player] = useState({
-    videoId: songs[0].youtube_id,
-    options: {
-      height: "390",
-      width: "640",
-      playerVars: {
-        autoplay: 1,
-      },
+  const [songsRaw] = useState(songs);
+  const [currentSong, setCurrentSong] = useState(songsRaw[0]);
+  const [playerOptions] = useState({
+    height: "1",
+    width: "1",
+    playerVars: {
+      autoplay: 1,
+      controls: true,
     },
   });
 
   return (
-    <PlayerContext.Provider value={{ player }}>
+    <PlayerContext.Provider
+      value={{
+        playerOptions,
+        songsRaw,
+        currentSong,
+        setCurrentSong,
+      }}
+    >
       {children}
     </PlayerContext.Provider>
   );

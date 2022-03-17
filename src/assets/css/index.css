@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.controls-container {
+  display: flex;
+  background-color: aquamarine;
+  width: fit-content;
+  padding: 14px;
+}
+
+.controls-container svg {
+  padding-left: 0.75rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.bgcover {
+  height: 100%;
+  width: 100%;
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  height: 100vh;
+  width: 50%;
+}

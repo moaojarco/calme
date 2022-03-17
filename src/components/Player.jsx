@@ -1,14 +1,13 @@
-import Youtube from "react-youtube";
-import { PlayerContext } from "../contexts/PlayerContext";
 import { useContext } from "react";
+import YouTube from "react-youtube";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 export const Player = () => {
-  const { player } = useContext(PlayerContext);
+  const { currentSong, playerOptions } = useContext(PlayerContext);
 
   return (
-    <div>
-      <h1 className="text-red-500 text-4xl">Youtube</h1>
-      <Youtube opts={player.options} videoId={player.videoId} />
-    </div>
+    <>
+      <YouTube videoId={currentSong.youtube_id} opts={playerOptions} />
+    </>
   );
 };

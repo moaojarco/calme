@@ -23,21 +23,20 @@ function App() {
       }}
     >
       <img
-        src={currentSong.cover}
         alt="JJ"
+        draggable="false"
+        src={`${currentSong.cover}`}
         style={{
-          background: `url(${currentSong.cover}) top`,
           minHeight: "100vh",
           width: "100%",
           position: "absolute",
-          filter: "blur(5px)",
+          filter: "blur(4px)",
           zIndex: "-1",
         }}
       />
       <Controls />
       <div className="flex justify-between w-full">
         <Showcase />
-        {extraControlsOpen && <ExtraControls />}
       </div>
       <div className="relative">{menuOpen && <SongsList />}</div>
       <Player />

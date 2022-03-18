@@ -2,16 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .controls-container {
   display: flex;
-  background-color: aquamarine;
+  background-color: #0f172a;
+  border-bottom: 2px solid #1c2436;
   width: fit-content;
-  padding: 14px;
+  padding: 8px;
+  width: 100%;
 }
 
 .controls-container svg {
   padding-left: 0.75rem;
-  width: 2.5rem;
+  width: 2.45rem;
   cursor: pointer;
 }
 
@@ -35,14 +46,24 @@
   filter: brightness(40%);
 }
 
+@media screen and (max-width: 480px) {
+  .controls-container {
+    min-width: 100vw;
+  }
+
+  .controls-container svg {
+    width: 2.2rem;
+  }
+}
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: scale(0.5);
   }
 
   100% {
     opacity: 1;
-    transform: translate(0);
+    transform: scale(1);
   }
 }

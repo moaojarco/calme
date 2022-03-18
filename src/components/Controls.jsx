@@ -2,11 +2,10 @@ import { useContext } from "react";
 import { PlayerContext } from "../contexts/PlayerContext";
 
 export const Controls = () => {
-  const { player, currentSong, setCurrentSong, songsRaw } =
-    useContext(PlayerContext);
+  const { player, setCurrentSong, songsRaw } = useContext(PlayerContext);
 
   return (
-    <div className="bg-transparent fixed bottom-0 w-full p-4">
+    <div className="bg-transparent">
       <div className="controls-container">
         <svg
           onClick={() => {
@@ -16,7 +15,7 @@ export const Controls = () => {
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -31,7 +30,7 @@ export const Controls = () => {
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -47,7 +46,7 @@ export const Controls = () => {
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -57,13 +56,16 @@ export const Controls = () => {
         </svg>
         <svg
           onClick={() => {
-            setCurrentSong(
-              songsRaw[Math.floor(Math.random() * songsRaw.length)]
-            );
+            if (player) {
+              // player.seekTo(player.getCurrentTime() + 10);
+              setCurrentSong(
+                songsRaw[Math.floor(Math.random() * songsRaw.length)]
+              );
+            }
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -79,7 +81,7 @@ export const Controls = () => {
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="2"
         >
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -94,7 +96,7 @@ export const Controls = () => {
           }}
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
+          stroke="#DBE0E6"
           strokeWidth="2"
         >
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>

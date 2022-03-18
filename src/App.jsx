@@ -9,25 +9,37 @@ import { MenusContext } from "./contexts/MenusContext";
 
 function App() {
   const { currentSong } = useContext(PlayerContext);
-  const { menuOpen, setMenuOpen } = useContext(MenusContext);
+  const { menuOpen, setMenuOpen, extraControlsOpen, setExtraControlsOpen } =
+    useContext(MenusContext);
 
   return (
     <div
       onMouseEnter={() => {
-        setMenuOpen(true);
+        // setMenuOpen(true);
+        setExtraControlsOpen(true);
       }}
       onMouseLeave={() => {
-        setMenuOpen(false);
-      }}
-      style={{
-        background: `url(${currentSong.cover}) top`,
-        minHeight: "100vh",
-        width: "100%",
+        setExtraControlsOpen(false);
       }}
     >
-      <Showcase />
-      <div className="relative">{menuOpen && <SongsList />}</div>
+      <img
+        src={currentSong.cover}
+        alt="JJ"
+        style={{
+          background: `url(${currentSong.cover}) top`,
+          minHeight: "100vh",
+          width: "100%",
+          position: "absolute",
+          filter: "blur(5px)",
+          zIndex: "-1",
+        }}
+      />
       <Player />
+      <div className="flex justify-between w-full">
+        <Showcase />
+        {extraControlsOpen && <ExtraControls />}
+      </div>
+      <div className="relative">{menuOpen && <SongsList />}</div>
     </div>
   );
 }

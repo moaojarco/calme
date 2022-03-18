@@ -5,7 +5,9 @@ export const PlayerContext = createContext();
 
 const PlayerProvider = ({ children }) => {
   const [songsRaw] = useState(songs);
-  const [currentSong, setCurrentSong] = useState(songsRaw[0]);
+  const [currentSong, setCurrentSong] = useState(
+    songsRaw[Math.floor(Math.random() * songsRaw.length)]
+  );
   const [playerOptions] = useState({
     height: "1",
     width: "1",

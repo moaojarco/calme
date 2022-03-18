@@ -9,7 +9,7 @@ import { MenusContext } from "./contexts/MenusContext";
 
 function App() {
   const { currentSong } = useContext(PlayerContext);
-  const { menuOpen, setMenuOpen, extraControlsOpen, setExtraControlsOpen } =
+  const { menuOpen, extraControlsOpen, setExtraControlsOpen } =
     useContext(MenusContext);
 
   return (

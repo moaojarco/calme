@@ -8,7 +8,7 @@ import { ExtraControls } from "./components/ExtraControls";
 import { MenusContext } from "./contexts/MenusContext";
 
 function App() {
-  const { currentSong } = useContext(PlayerContext);
+  const { currentSong, player } = useContext(PlayerContext);
   const { menuOpen, extraControlsOpen, setExtraControlsOpen } =
     useContext(MenusContext);
 
@@ -34,12 +34,13 @@ function App() {
           zIndex: "-1",
         }}
       />
-      <Player />
+      <Controls />
       <div className="flex justify-between w-full">
         <Showcase />
         {extraControlsOpen && <ExtraControls />}
       </div>
       <div className="relative">{menuOpen && <SongsList />}</div>
+      <Player />
     </div>
   );
 }

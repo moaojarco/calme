@@ -1,8 +1,19 @@
+import { useContext } from "react";
+import { PlayerContext } from "../contexts/PlayerContext";
+
 export const Controls = () => {
+  const { player, currentSong, setCurrentSong, songsRaw } =
+    useContext(PlayerContext);
+
   return (
     <div className="bg-transparent fixed bottom-0 w-full p-4">
       <div className="controls-container">
         <svg
+          onClick={() => {
+            if (player) {
+              player.playVideo();
+            }
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -13,6 +24,11 @@ export const Controls = () => {
           <polygon points="5 3 19 12 5 21 5 3"></polygon>
         </svg>
         <svg
+          onClick={() => {
+            if (player) {
+              player.pauseVideo();
+            }
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -24,6 +40,11 @@ export const Controls = () => {
           <rect x="14" y="4" width="4" height="16"></rect>
         </svg>
         <svg
+          onClick={() => {
+            setCurrentSong(
+              songsRaw[Math.floor(Math.random() * songsRaw.length)]
+            );
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -35,6 +56,11 @@ export const Controls = () => {
           <line x1="5" y1="19" x2="5" y2="5"></line>
         </svg>
         <svg
+          onClick={() => {
+            setCurrentSong(
+              songsRaw[Math.floor(Math.random() * songsRaw.length)]
+            );
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -46,6 +72,11 @@ export const Controls = () => {
           <line x1="19" y1="5" x2="19" y2="19"></line>
         </svg>
         <svg
+          onClick={() => {
+            if (player) {
+              player.mute();
+            }
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -56,6 +87,11 @@ export const Controls = () => {
           <line x1="17" y1="9" x2="23" y2="15"></line>
         </svg>
         <svg
+          onClick={() => {
+            if (player && player.isMuted()) {
+              player.unMute();
+            }
+          }}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"

@@ -1,71 +1,85 @@
 [
   {
+    "id": 1,
     "youtube_id": "bgfKCui-Acc",
     "cover": "https://nerdistraidoblog.files.wordpress.com/2020/03/animes.jpg?w=1200",
     "name": "Animes Lofi"
   },
   {
+    "id": 2,
     "youtube_id": "qEB0FIBoKAg",
     "cover": "https://pbs.twimg.com/media/DRLX6EMXcAAPFgT.jpg",
     "name": "Chinese Lofi Beat Mix"
   },
   {
+    "id": 3,
     "youtube_id": "ykURWvAo6Eg",
     "cover": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/c5/ef/5b/c5ef5bb8-ac67-4f91-ec65-80d1d76996d7/190296322860.jpg/1200x1200bf-60.jpg",
     "name": "Japanese Lofi Beat Mix"
   },
   {
+    "id": 4,
     "youtube_id": "GdzrrWA8e7A",
     "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/aa/a1/c1/aaa1c189-2364-02a0-b901-478f9eb75de7/source/1200x1200.webp",
     "name": "Zelda & Chill"
   },
   {
+    "id": 5,
     "youtube_id": "_tV5LEBDs7w",
     "cover": "https://f4.bcbits.com/img/a0953413770_10.jpg",
     "name": "Cozy Winter"
   },
   {
+    "id": 6,
     "youtube_id": "BTYAsjAVa3I",
     "cover": "https://f4.bcbits.com/img/a1435058381_10.jpg",
     "name": "3 A.M Study Session"
   },
   {
+    "id": 7,
     "youtube_id": "YeSeTwBcwYQ",
     "cover": "https://f4.bcbits.com/img/a3971371715_10.jpg",
     "name": "Directions"
   },
   {
+    "id": 8,
     "youtube_id": "JfPx2Pf9wQM",
     "cover": "https://f4.bcbits.com/img/a2853991834_10.jpg",
     "name": "Second Wind",
     "artist": "L'indécis"
   },
   {
+    "id": 9,
     "youtube_id": "kEPakJDkTOk",
     "cover": "https://f4.bcbits.com/img/a2897967570_10.jpg",
     "name": "Daydreams"
   },
   {
+    "id": 10,
     "youtube_id": "SMgWHnDMHvU",
     "cover": "https://f4.bcbits.com/img/a1481913890_10.jpg",
     "name": "Daydreams 2"
   },
   {
+    "id": 11,
     "youtube_id": "QB-fo_bGnQs",
     "cover": "https://f4.bcbits.com/img/a0925315459_10.jpg",
     "name": "Chillhop Essentials Spring 2019"
   },
   {
+    "id": 12,
     "youtube_id": "n5uz7egB9tA",
     "cover": "https://f4.bcbits.com/img/a2697384601_10.jpg",
     "name": "Chillhop Essentials Summer 2019"
   },
   {
+    "id": 13,
     "youtube_id": "vw3iCuCRm0Q",
     "cover": "https://f4.bcbits.com/img/a2417999185_10.jpg",
     "name": "Chillhop Essentials Fall 2019"
   },
   {
+    "id": 14,
     "youtube_id": "i_cV8B2pjqk",
     "cover": "https://f4.bcbits.com/img/a2903168500_10.jpg",
     "name": "Chillhop Essentials Winter 2020"

@@ -8,6 +8,9 @@ const PlayerProvider = ({ children }) => {
   const [currentSong, setCurrentSong] = useState(
     songsRaw[Math.floor(Math.random() * songsRaw.length)]
   );
+
+  const [player, setPlayer] = useState(null);
+
   const [playerOptions] = useState({
     height: "1",
     width: "1",
@@ -24,6 +27,8 @@ const PlayerProvider = ({ children }) => {
         songsRaw,
         currentSong,
         setCurrentSong,
+        player,
+        setPlayer,
       }}
     >
       {children}

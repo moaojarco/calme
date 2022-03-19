@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./assets/css/index.css";
+import "./assets/css/inputs.css";
 import MenusProvider from "./contexts/MenusContext";
 import PlayerProvider from "./contexts/PlayerContext";
 

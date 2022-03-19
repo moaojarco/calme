@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { MenusContext } from "../contexts/MenusContext";
 import { PlayerContext } from "../contexts/PlayerContext";
 
 export const Controls = () => {
   const { player, setCurrentSong, songsRaw } = useContext(PlayerContext);
+  const { volumeInputOpen, setVolumeInputOpen } = useContext(MenusContext);
+  const [volume, setVolume] = useState(50);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   return (
     <div className="bg-transparent">
@@ -38,6 +42,7 @@ export const Controls = () => {
           <rect x="6" y="4" width="4" height="16"></rect>
           <rect x="14" y="4" width="4" height="16"></rect>
         </svg>
+
         <svg
           onClick={() => {
             setCurrentSong(
@@ -75,24 +80,8 @@ export const Controls = () => {
         </svg>
         <svg
           onClick={() => {
-            if (player) {
-              player.mute();
-            }
-          }}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#DBE0E6"
-          strokeWidth="2"
-        >
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-          <line x1="23" y1="9" x2="17" y2="15"></line>
-          <line x1="17" y1="9" x2="23" y2="15"></line>
-        </svg>
-        <svg
-          onClick={() => {
-            if (player && player.isMuted()) {
-              player.unMute();
-            }
+            // player.unMute();
+            setVolumeInputOpen(!volumeInputOpen);
           }}
           viewBox="0 0 24 24"
           fill="none"
@@ -102,6 +91,21 @@ export const Controls = () => {
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
         </svg>
+        {volumeInputOpen && (
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="0.01"
+            value={volume}
+            onChange={(e) => {
+              player.unMute();
+              // console.log(player.getPlayerState());
+              player.setVolume(e.target.value);
+              setVolume(e.target.value);
+            }}
+          />
+        )}
       </div>
     </div>
   );

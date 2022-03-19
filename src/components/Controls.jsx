@@ -5,7 +5,7 @@ import { PlayerContext } from "../contexts/PlayerContext";
 export const Controls = () => {
   const { player, setCurrentSong, songsRaw } = useContext(PlayerContext);
   const { volumeInputOpen, setVolumeInputOpen } = useContext(MenusContext);
-  const [volume, setVolume] = useState(50);
+  const [volume, setVolume] = useState(30);
   const [isPlaying, setIsPlaying] = useState(true);
 
   return (

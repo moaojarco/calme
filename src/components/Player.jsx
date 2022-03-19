@@ -12,7 +12,7 @@ export const Player = () => {
         opts={playerOptions}
         onReady={(e) => {
           e.target.playVideo();
-          e.target.setVolume(20);
+          e.target.setVolume(30);
           setPlayer(e.target);
           // console.log(e.target.getCurrentTime());
           // console.log(e.target.getDuration());

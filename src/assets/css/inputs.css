@@ -2,7 +2,7 @@ input[type="range"] {
   height: 8px;
   -webkit-appearance: none;
   margin: auto 10px;
-  width: 20%;
+  width: 10rem;
 }
 input[type="range"]:focus {
   outline: none;

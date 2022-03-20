@@ -1,12 +1,24 @@
 import { useContext, useState } from "react";
 import { MenusContext } from "../contexts/MenusContext";
 import { PlayerContext } from "../contexts/PlayerContext";
+import formatVideoDuration from "../utils/videoDurationFormat";
 
 export const Controls = () => {
-  const { player, setCurrentSong, songsRaw } = useContext(PlayerContext);
-  const { volumeInputOpen, setVolumeInputOpen } = useContext(MenusContext);
+  const {
+    player,
+    setCurrentSong,
+    songsRaw,
+    duration,
+    currentTime,
+    setCurrentTime,
+  } = useContext(PlayerContext);
+  const {
+    volumeInputOpen,
+    setVolumeInputOpen,
+    timeInputOpen,
+    setTimeInputOpen,
+  } = useContext(MenusContext);
   const [volume, setVolume] = useState(30);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   return (
     <div className="bg-transparent">
@@ -82,6 +94,7 @@ export const Controls = () => {
           onClick={() => {
             // player.unMute();
             setVolumeInputOpen(!volumeInputOpen);
+            setTimeInputOpen(!timeInputOpen);
           }}
           viewBox="0 0 24 24"
           fill="none"
@@ -104,7 +117,27 @@ export const Controls = () => {
               player.setVolume(e.target.value);
               setVolume(e.target.value);
             }}
+            className="volume-input"
           />
+        )}
+        {player && timeInputOpen && (
+          <div className="timer">
+            {currentTime !== isNaN() && (
+              <label>{formatVideoDuration(currentTime)}</label>
+            )}
+            <input
+              type="range"
+              min="0"
+              max={duration}
+              defaultValue={currentTime}
+              value={currentTime}
+              onChange={(e) => {
+                setCurrentTime(e.target.value);
+                player.seekTo(e.target.value);
+              }}
+            />
+            <label>{formatVideoDuration(duration)}</label>
+          </div>
         )}
       </div>
     </div>

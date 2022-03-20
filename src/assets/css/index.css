@@ -13,8 +13,8 @@ body {
 
 .controls-container {
   display: flex;
-  background-color: #0f172a;
-  border-bottom: 2px solid #1c2436;
+  background-color: #171717;
+  border-bottom: 2px solid #242424;
   width: fit-content;
   padding: 8px;
   width: 100%;
@@ -46,13 +46,17 @@ body {
   filter: brightness(40%);
 }
 
+.showcase {
+  background-color: #171717;
+}
+
 @media screen and (max-width: 480px) {
   .controls-container {
     min-width: 100vw;
   }
 
   .controls-container svg {
-    width: 2.2rem;
+    width: 2rem;
   }
 }
 

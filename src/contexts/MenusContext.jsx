@@ -7,6 +7,7 @@ const MenusProvider = ({ children }) => {
   const [controlsOpen, setControlsOpen] = useState(false);
   const [extraControlsOpen, setExtraControlsOpen] = useState(false);
   const [volumeInputOpen, setVolumeInputOpen] = useState(false);
+  const [timeInputOpen, setTimeInputOpen] = useState(true);
 
   return (
     <MenusContext.Provider
@@ -19,6 +20,8 @@ const MenusProvider = ({ children }) => {
         setExtraControlsOpen,
         volumeInputOpen,
         setVolumeInputOpen,
+        timeInputOpen,
+        setTimeInputOpen,
       }}
     >
       {children}

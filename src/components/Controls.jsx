@@ -135,6 +135,7 @@ export const Controls = () => {
                 setCurrentTime(e.target.value);
                 player.seekTo(e.target.value);
               }}
+              className="time-input"
             />
             <label>{formatVideoDuration(duration)}</label>
           </div>

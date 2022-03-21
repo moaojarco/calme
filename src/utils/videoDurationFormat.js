@@ -6,6 +6,7 @@ function formatVideoDuration(time) {
   if (hours > 0) {
     return hours + ":" + minutes + ":" + seconds;
   } else {
+    console.log(minutes);
     return minutes + ":" + seconds;
   }
 }

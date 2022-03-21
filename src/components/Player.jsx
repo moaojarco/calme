@@ -18,9 +18,9 @@ export const Player = () => {
           setPlayer(e.target);
 
           setInterval(() => {
-            if (e.target.getCurrentTime() !== "isNaN") {
+            const currentValue = e.target.getCurrentTime();
+            if (typeof currentValue === "number")
               setCurrentTime(e.target.getCurrentTime());
-            }
           }, 1000);
 
           // console.log(e.target.getCurrentTime());

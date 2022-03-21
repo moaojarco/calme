@@ -21,7 +21,7 @@ export const Controls = () => {
   const [volume, setVolume] = useState(15);
 
   return (
-    <div className="bg-transparent">
+    <div className="bg-transparent bar-top">
       <div className="controls-container">
         <svg
           onClick={() => {

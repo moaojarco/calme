@@ -117,10 +117,8 @@ input {
 }
 
 input.time-input[type="range"] {
-  height: 0.5rem;
   -webkit-appearance: none;
   margin: auto 0.625rem;
-  width: 30rem;
 }
 input.time-input[type="range"]:focus {
   outline: none;
@@ -206,7 +204,7 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
   background: #222;
 }
 
-@media screen and (max-width: 480px) {
+@media (min-width: 350px) {
   .timer > label {
     font-size: 0.8rem;
   }
@@ -231,5 +229,51 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
 
   .timer > label:last-child {
     margin-left: 0.1rem;
+  }
+}
+
+@media (min-width: 480px) {
+  input.time-input[type="range"] {
+    height: 0.5rem;
+    -webkit-appearance: none;
+    margin: auto 0.625rem;
+    width: 10rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .timer > label {
+    font-size: 0.8rem;
+  }
+
+  input.time-input[type="range"] {
+    height: 0.5rem;
+    -webkit-appearance: none;
+    margin: auto 0.625rem;
+    width: 20rem;
+  }
+
+  .timer {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .timer > label:first-child {
+    margin-right: 0.1rem;
+    margin-left: 0.5rem;
+  }
+
+  .timer > label:last-child {
+    margin-left: 0.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  input.time-input[type="range"] {
+    height: 0.5rem;
+    -webkit-appearance: none;
+    margin: auto 0.625rem;
+    width: 40rem;
   }
 }

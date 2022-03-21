@@ -117,6 +117,7 @@ input {
 }
 
 input.time-input[type="range"] {
+  height: 0.5rem;
   -webkit-appearance: none;
   margin: auto 0.625rem;
 }
@@ -210,20 +211,21 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
   }
 
   input.time-input[type="range"] {
-    height: 0.5rem;
     -webkit-appearance: none;
     margin: auto 0.625rem;
-    width: 9rem;
+    width: 100%;
   }
 
   .timer {
     display: flex;
     align-items: center;
     margin: 0 auto;
+    padding: 10px;
+    width: 100%;
   }
 
   .timer > label:first-child {
-    margin-right: 0.1rem;
+    margin-right: 0.5rem;
     margin-left: 0.5rem;
   }
 
@@ -237,7 +239,7 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
     height: 0.5rem;
     -webkit-appearance: none;
     margin: auto 0.625rem;
-    width: 10rem;
+    width: 100%;
   }
 }
 
@@ -250,7 +252,7 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
     height: 0.5rem;
     -webkit-appearance: none;
     margin: auto 0.625rem;
-    width: 20rem;
+    width: 100%;
   }
 
   .timer {
@@ -260,12 +262,12 @@ input.time-input[type="range"]:focus::-ms-fill-upper {
   }
 
   .timer > label:first-child {
-    margin-right: 0.1rem;
+    margin-right: 0.5rem;
     margin-left: 0.5rem;
   }
 
   .timer > label:last-child {
-    margin-left: 0.1rem;
+    margin-left: 0.5rem;
   }
 }
 

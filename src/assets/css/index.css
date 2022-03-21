@@ -18,6 +18,7 @@ body {
 
 .controls-container {
   display: flex;
+  flex-direction: column;
   background-color: #171717;
   border-bottom: 2px solid #242424;
   width: fit-content;
@@ -25,8 +26,13 @@ body {
   width: 100%;
 }
 
-.controls-container svg {
-  padding-left: 0.75rem;
+.controls-container div:first-child {
+  display: flex;
+  margin: 0 auto;
+}
+
+.controls-container > div > svg {
+  padding: 0.75rem;
   width: 3rem;
   cursor: pointer;
 }
@@ -56,11 +62,6 @@ body {
 }
 
 @media (min-width: 350px) {
-  .bar-top {
-    display: flex;
-    flex-direction: row;
-  }
-
   .controls-container {
     min-width: 100vw;
   }
@@ -84,18 +85,13 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .bar-top {
-    display: flex;
-    flex-direction: column;
-  }
-
   .controls-container {
     min-width: 100vw;
+    flex-direction: row;
   }
 
   .controls-container svg {
     width: 2.4rem;
-    margin: 0 0.5rem;
     padding: 5px;
   }
 }

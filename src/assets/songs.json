@@ -2,8 +2,14 @@
   {
     "id": 1,
     "youtube_id": "bgfKCui-Acc",
-    "cover": "https://nerdistraidoblog.files.wordpress.com/2020/03/animes.jpg?w=1200",
-    "name": "Animes Lofi"
+    "cover": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/4b/99/e3/4b99e3a7-85e7-8b16-5516-e64a3ceae2c9/3701421582805.png/1200x1200bf-60.jpg",
+    "name": "Anime Lofi"
+  },
+  {
+    "id": 16,
+    "youtube_id": "ZhstyJSNKME",
+    "cover": "https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-hostgator-brasil-v1-0-1%2F441%2F658441%2FixGKtIsF%2F69618f0760da4a46b4855c8c8e05fe38&methods=resize%2C1200%2C5000",
+    "name": "Brazilian Lofi Beat Mix"
   },
   {
     "id": 2,
@@ -22,6 +28,12 @@
     "youtube_id": "GdzrrWA8e7A",
     "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/aa/a1/c1/aaa1c189-2364-02a0-b901-478f9eb75de7/source/1200x1200.webp",
     "name": "Zelda & Chill"
+  },
+  {
+    "id": 15,
+    "youtube_id": "u4ENF5OCtkY",
+    "cover": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/5c/d6/26/5cd626f4-2691-9325-2a8d-96bd04589404/5056538826068.png/1200x1200bf-60.jpg",
+    "name": "Jazzy Town"
   },
   {
     "id": 5,
@@ -83,5 +95,11 @@
     "youtube_id": "i_cV8B2pjqk",
     "cover": "https://f4.bcbits.com/img/a2903168500_10.jpg",
     "name": "Chillhop Essentials Winter 2020"
+  },
+  {
+    "id": 17,
+    "youtube_id": "LUGsgjksH1c",
+    "cover": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/14/22/77/142277c6-469c-3f29-f74a-d5aea05479a4/cover_10213531.jpg/1200x1200bf-60.jpg",
+    "name": "Piano Lofi Beats"
   }
 ]

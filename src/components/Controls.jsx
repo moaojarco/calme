@@ -18,7 +18,7 @@ export const Controls = () => {
     timeInputOpen,
     setTimeInputOpen,
   } = useContext(MenusContext);
-  const [volume, setVolume] = useState(30);
+  const [volume, setVolume] = useState(15);
 
   return (
     <div className="bg-transparent">
@@ -122,14 +122,11 @@ export const Controls = () => {
         )}
         {player && timeInputOpen && (
           <div className="timer">
-            {currentTime !== isNaN() && (
-              <label>{formatVideoDuration(currentTime)}</label>
-            )}
+            <label>{formatVideoDuration(currentTime)}</label>
             <input
               type="range"
               min="0"
               max={duration}
-              defaultValue={currentTime}
               value={currentTime}
               onChange={(e) => {
                 setCurrentTime(e.target.value);

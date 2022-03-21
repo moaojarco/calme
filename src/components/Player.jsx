@@ -12,8 +12,8 @@ export const Player = () => {
         videoId={currentSong.youtube_id}
         opts={playerOptions}
         onReady={(e) => {
+          e.target.setVolume(15);
           e.target.playVideo();
-          e.target.setVolume(30);
           setDuration(e.target.getDuration());
           setPlayer(e.target);
 

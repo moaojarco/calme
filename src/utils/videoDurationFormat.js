@@ -1,13 +1,21 @@
+function zeros(i) {
+  if (i < 10) {
+    return "0" + i;
+  } else {
+    return i;
+  }
+}
+
 function formatVideoDuration(time) {
-  var seconds = parseInt(time % 60);
-  var minutes = parseInt((time / 60) % 60);
-  var hours = parseInt(time / 3600);
+  const seconds = parseInt(time % 60);
+  const minutes = parseInt((time / 60) % 60);
+  const hours = parseInt(time / 3600);
 
   if (hours > 0) {
-    return hours + ":" + minutes + ":" + seconds;
+    return `${hours}:${zeros(minutes)}:${zeros(seconds)}`;
   } else {
-    console.log(minutes);
-    return minutes + ":" + seconds;
+    // console.log(minutes);
+    return zeros(minutes) + ":" + zeros(seconds);
   }
 }
 

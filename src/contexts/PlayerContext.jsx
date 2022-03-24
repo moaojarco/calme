@@ -18,7 +18,6 @@ const PlayerProvider = ({ children }) => {
     width: "1",
     playerVars: {
       autoplay: 1,
-      controls: true,
     },
   });
 

@@ -30,7 +30,7 @@ function App() {
           minHeight: "100vh",
           width: "100%",
           position: "absolute",
-          filter: "blur(4px)",
+          filter: "blur(2px)",
           zIndex: "-1",
         }}
       />

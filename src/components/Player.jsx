@@ -14,6 +14,7 @@ export const Player = () => {
         onReady={(e) => {
           e.target.setVolume(15);
           e.target.playVideo();
+          console.log(e.target.getPlayerState());
           setDuration(e.target.getDuration());
           setPlayer(e.target);
 

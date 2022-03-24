@@ -61,6 +61,10 @@ body {
   background-color: #171717;
 }
 
+.card-bg {
+  background-color: #171717;
+}
+
 @media (min-width: 350px) {
   .controls-container {
     min-width: 100vw;
@@ -99,7 +103,7 @@ body {
 @media (min-width: 1024px) {
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1365px) {
 }
 
 @keyframes moveInBottom {

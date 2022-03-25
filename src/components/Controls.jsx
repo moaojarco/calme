@@ -11,6 +11,8 @@ export const Controls = () => {
     duration,
     currentTime,
     setCurrentTime,
+    volume,
+    setVolume,
   } = useContext(PlayerContext);
   const {
     volumeInputOpen,
@@ -18,7 +20,6 @@ export const Controls = () => {
     timeInputOpen,
     setTimeInputOpen,
   } = useContext(MenusContext);
-  const [volume, setVolume] = useState(15);
 
   return (
     <div className="controls-container">

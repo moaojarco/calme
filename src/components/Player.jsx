@@ -3,8 +3,14 @@ import YouTube from "react-youtube";
 import { PlayerContext } from "../contexts/PlayerContext";
 
 export const Player = () => {
-  const { currentSong, playerOptions, setPlayer, setCurrentTime, setDuration } =
-    useContext(PlayerContext);
+  const {
+    currentSong,
+    playerOptions,
+    setPlayer,
+    setCurrentTime,
+    setDuration,
+    volume,
+  } = useContext(PlayerContext);
 
   return (
     <>
@@ -12,11 +18,18 @@ export const Player = () => {
         videoId={currentSong.youtube_id}
         opts={playerOptions}
         onReady={(e) => {
-          e.target.setVolume(15);
-          e.target.playVideo();
-          console.log(e.target.getPlayerState());
-          setDuration(e.target.getDuration());
           setPlayer(e.target);
+          e.target.setVolume(volume);
+
+          if (
+            e.target.getPlayerState() === -1 ||
+            e.target.getPlayerState() === 3
+          ) {
+            e.target.unMute();
+            e.target.playVideo();
+          }
+
+          setDuration(e.target.getDuration());
 
           setInterval(() => {
             const currentValue = e.target.getCurrentTime();
@@ -26,6 +39,9 @@ export const Player = () => {
 
           // console.log(e.target.getCurrentTime());
           // console.log(e.target.getDuration());
+        }}
+        onStateChange={(e) => {
+          console.log(e.target.getPlayerState());
         }}
       />
     </>

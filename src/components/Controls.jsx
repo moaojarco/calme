@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MenusContext } from "../contexts/MenusContext";
 import { PlayerContext } from "../contexts/PlayerContext";
 import formatVideoDuration from "../utils/videoDurationFormat";

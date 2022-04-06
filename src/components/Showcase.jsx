@@ -3,7 +3,7 @@ import { PlayerContext } from "../contexts/PlayerContext";
 import { ExtraControls } from "./ExtraControls";
 
 export const Showcase = () => {
-  const { currentSong, player } = useContext(PlayerContext);
+  const { currentSong } = useContext(PlayerContext);
 
   return (
     <div className="flex text-gray-200 w-full showcase">

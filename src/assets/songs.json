@@ -19,8 +19,8 @@
   },
   {
     "id": 2,
-    "youtube_id": "qEB0FIBoKAg",
-    "cover": "https://pbs.twimg.com/media/DRLX6EMXcAAPFgT.jpg",
+    "youtube_id": "GwyXQO0tSW4",
+    "cover": "https://maisretorno.com/api/nextjs/resize-image?src=https://media.maisretorno.com/portal/wp-content/uploads/2021/04/pexels-magda-ehlers-2846076-800x450.jpg&w=1200&h=1200",
     "name": "Chinese Lofi"
   },
   {
@@ -40,6 +40,24 @@
     "youtube_id": "u4ENF5OCtkY",
     "cover": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/5c/d6/26/5cd626f4-2691-9325-2a8d-96bd04589404/5056538826068.png/1200x1200bf-60.jpg",
     "name": "Jazzy Town"
+  },
+  {
+    "id": 20,
+    "youtube_id": "4pcNRDx6KrE",
+    "cover": "https://i.pinimg.com/originals/2e/05/8f/2e058f199de4d10e1473b57564db6f9c.jpg",
+    "name": "The Night Code"
+  },
+  {
+    "id": 21,
+    "youtube_id": "iBkmZfBmU78",
+    "cover": "https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/68/22/15/68221560-3286-14dc-ad12-82e26a805673/67409.jpg/1200x1200bf-60.jpg",
+    "name": "Aitakatta Sora Piano"
+  },
+  {
+    "id": 22,
+    "youtube_id": "H9yfuYDoGf4",
+    "cover": "https://i.pinimg.com/originals/83/2e/5e/832e5e1e95ea3eb8bb113b3974d7a9dc.jpg",
+    "name": "Your Name - Full Soundtrack"
   },
   {
     "id": 5,

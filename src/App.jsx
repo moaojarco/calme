@@ -4,13 +4,11 @@ import { useContext } from "react";
 import { PlayerContext } from "./contexts/PlayerContext";
 import { Player } from "./components/Player";
 import { Showcase } from "./components/Showcase";
-import { ExtraControls } from "./components/ExtraControls";
 import { MenusContext } from "./contexts/MenusContext";
 
 function App() {
-  const { currentSong, player } = useContext(PlayerContext);
-  const { menuOpen, extraControlsOpen, setExtraControlsOpen } =
-    useContext(MenusContext);
+  const { currentSong } = useContext(PlayerContext);
+  const { menuOpen, setExtraControlsOpen } = useContext(MenusContext);
 
   return (
     <div

@@ -1,4 +1,4 @@
-function zeros(i) {
+function zeros(i: number) {
   if (i < 10) {
     return "0" + i;
   } else {
@@ -6,10 +6,10 @@ function zeros(i) {
   }
 }
 
-function formatVideoDuration(time) {
-  const seconds = parseInt(time % 60);
-  const minutes = parseInt((time / 60) % 60);
-  const hours = parseInt(time / 3600);
+function formatVideoDuration(time: number) {
+  const seconds = parseInt(String(time % 60));
+  const minutes = parseInt(String((time / 60) % 60));
+  const hours = parseInt(String(time / 3600));
 
   if (hours > 0) {
     return `${hours}:${zeros(minutes)}:${zeros(seconds)}`;

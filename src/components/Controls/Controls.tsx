@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { MenusContext } from "../contexts/MenusContext";
-import { PlayerContext } from "../contexts/PlayerContext";
-import formatVideoDuration from "../utils/videoDurationFormat";
+import { MenusContext } from "../../contexts/MenusContext";
+import { PlayerContext } from "../../contexts/PlayerContext";
+import formatVideoDuration from "../../utils/videoDurationFormat";
+import styles from "./Controls.module.scss";
 
 export const Controls = () => {
   const {
@@ -11,58 +12,73 @@ export const Controls = () => {
     duration,
     currentTime,
     setCurrentTime,
-    volume,
-    setVolume,
   } = useContext(PlayerContext);
-  const {
-    volumeInputOpen,
-    setVolumeInputOpen,
-    timeInputOpen,
-    setTimeInputOpen,
-  } = useContext(MenusContext);
+  const { timeInputOpen } = useContext(MenusContext);
 
   return (
-    <div className="controls-container">
-      <div>
-        <svg
-          onClick={() => {
-            setCurrentSong(
-              songsRaw[Math.floor(Math.random() * songsRaw.length)]
-            );
-          }}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#DBE0E6"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polygon points="19 20 9 12 19 4 19 20"></polygon>
-          <line x1="5" y1="19" x2="5" y2="5"></line>
-        </svg>
-        {player && player.getPlayerState() === 1 && (
+    <div className={styles["controls-container"]}>
+      {player && (
+        <div>
           <svg
             onClick={() => {
-              if (player) {
-                player.pauseVideo();
-              }
+              setCurrentSong(
+                songsRaw[Math.floor(Math.random() * songsRaw.length)]
+              );
             }}
             viewBox="0 0 24 24"
             fill="none"
             stroke="#DBE0E6"
-            strokeWidth="1.5"
+            strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <rect x="6" y="4" width="4" height="16"></rect>
-            <rect x="14" y="4" width="4" height="16"></rect>
+            <polygon points="19 20 9 12 19 4 19 20"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5"></line>
           </svg>
-        )}
-        {player && player.getPlayerState() !== 1 && (
+          {player && player.getPlayerState() === 1 && (
+            <svg
+              className={styles["pause-btn"]}
+              onClick={() => {
+                if (player) {
+                  player.pauseVideo();
+                }
+              }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#DBE0E6"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          )}
+          {player && player.getPlayerState() !== 1 && (
+            <svg
+              className={styles["play-btn"]}
+              onClick={() => {
+                if (player) {
+                  player.playVideo();
+                }
+              }}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#DBE0E6"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          )}
           <svg
             onClick={() => {
               if (player) {
-                player.playVideo();
+                // player.seekTo(player.getCurrentTime() + 10);
+                setCurrentSong(
+                  songsRaw[Math.floor(Math.random() * songsRaw.length)]
+                );
               }
             }}
             viewBox="0 0 24 24"
@@ -72,29 +88,10 @@ export const Controls = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            <polygon points="5 4 15 12 5 20 5 4"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19"></line>
           </svg>
-        )}
-        <svg
-          onClick={() => {
-            if (player) {
-              // player.seekTo(player.getCurrentTime() + 10);
-              setCurrentSong(
-                songsRaw[Math.floor(Math.random() * songsRaw.length)]
-              );
-            }
-          }}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#DBE0E6"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <polygon points="5 4 15 12 5 20 5 4"></polygon>
-          <line x1="19" y1="5" x2="19" y2="19"></line>
-        </svg>
-        <svg
+          {/* <svg
           onClick={() => {
             // player.unMute();
             setVolumeInputOpen(!volumeInputOpen);
@@ -123,8 +120,9 @@ export const Controls = () => {
             }}
             className="volume-input"
           />
-        )}
-      </div>
+        )} */}
+        </div>
+      )}
       {player && timeInputOpen && (
         <div className="timer">
           <label>{formatVideoDuration(currentTime)}</label>

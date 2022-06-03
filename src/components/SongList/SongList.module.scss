@@ -1,0 +1,22 @@
+@import "../../assets/css/variables.scss";
+
+.top-songlist {
+  display: flex;
+  justify-content: space-around;
+  color: $gray;
+  padding: .5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+  height: 15rem;
+  width: 100%;
+
+  div {
+    display: flex;
+    width: 100%;
+  }
+}

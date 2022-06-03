@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import YouTube from "react-youtube";
-import { PlayerContext } from "../contexts/PlayerContext";
+import { PlayerContext } from "../../contexts/PlayerContext";
 
 export const Player = () => {
   const {
@@ -17,7 +17,7 @@ export const Player = () => {
       <YouTube
         videoId={currentSong.youtube_id}
         opts={playerOptions}
-        onReady={(e) => {
+        onReady={(e: any) => {
           setPlayer(e.target);
           e.target.setVolume(volume);
 

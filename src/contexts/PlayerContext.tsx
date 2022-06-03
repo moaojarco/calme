@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 import songs from "../assets/songs.json";
 
-export const PlayerContext = createContext();
+export const PlayerContext = createContext({} as any);
 
-const PlayerProvider = ({ children }) => {
+const PlayerProvider = ({ children }: any) => {
   const [songsRaw] = useState(songs);
   const [currentSong, setCurrentSong] = useState(
     songsRaw[Math.floor(Math.random() * songsRaw.length)]

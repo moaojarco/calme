@@ -19,38 +19,40 @@ export const SongsList = () => {
       </div>
 
       <div className={styles["container"]} ref={songsListRef}>
-        {isLocalData
-          ? songsRaw.map((song: Song, idx: number) => (
-              <SongCard
-                key={idx}
-                onClick={() => setCurrentSong(song)}
-                song={song}
-              />
-            ))
-          : dynamicData &&
-            dynamicData.map((song: any, idx: number) => (
-              <SongCard
-                onClick={() =>
-                  setCurrentSong({
-                    id: idx,
-                    youtube_id: song.id.videoId,
-                    name: song.snippet.title,
-                    cover: `https://i.ytimg.com/vi/${song.id.videoId}/mqdefault.jpg`,
-                  })
-                }
-                key={idx}
-                song={{
+        {isLocalData &&
+          songsRaw.map((song: Song, idx: number) => (
+            <SongCard
+              key={idx}
+              onClick={() => setCurrentSong(song)}
+              song={song}
+            />
+          ))}
+        {/*
+        {dynamicData &&
+          dynamicData.map((song: any, idx: number) => (
+            <SongCard
+              onClick={() =>
+                setCurrentSong({
                   id: idx,
                   youtube_id: song.id.videoId,
-                  name:
-                    song.snippet.title.length >= 20
-                      ? song.snippet.title.slice(0, 18)
-                      : song.snippet.title,
+                  name: song.snippet.title,
                   cover: `https://i.ytimg.com/vi/${song.id.videoId}/mqdefault.jpg`,
-                  duration: 2,
-                }}
-              />
-            ))}
+                })
+              }
+              key={idx}
+              song={{
+                id: idx,
+                youtube_id: song.id.videoId,
+                name:
+                  song.snippet.title.length >= 20
+                    ? song.snippet.title.slice(0, 18)
+                    : song.snippet.title,
+                cover: `https://i.ytimg.com/vi/${song.id.videoId}/mqdefault.jpg`,
+                duration: 2,
+              }}
+            />
+          ))}
+          */}
       </div>
     </div>
   );

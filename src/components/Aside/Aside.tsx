@@ -6,7 +6,8 @@ import styles from "./Aside.module.scss";
 export const Aside = () => {
   const [query, setQuery] = useState<string>("");
   const { setDynamicData, setIsLocalData } = useContext(AppContext);
-
+  {
+    /*
   async function fetchYoutube(query: string) {
     setIsLocalData(false);
     const res = await fetch(
@@ -15,6 +16,8 @@ export const Aside = () => {
     const data = await res.json();
     console.log(data);
     setDynamicData(data.items);
+  }
+*/
   }
 
   return (
@@ -39,7 +42,6 @@ export const Aside = () => {
               />
             </>
           ))}
-      */}
 
         <div>
           <input
@@ -55,6 +57,7 @@ export const Aside = () => {
             }}
           />
         </div>
+      */}
       </>
     </aside>
   );

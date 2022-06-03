@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import MenusProvider from "./contexts/MenusContext";
+import AppProvider from "./contexts/AppContext";
 import PlayerProvider from "./contexts/PlayerContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <PlayerProvider>
-      <MenusProvider>
+    <AppProvider>
+      <PlayerProvider>
         <App />
-      </MenusProvider>
-    </PlayerProvider>
+      </PlayerProvider>
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

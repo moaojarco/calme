@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import YouTube from "react-youtube";
+import { AppContext } from "../../contexts/AppContext";
 import { PlayerContext } from "../../contexts/PlayerContext";
 
 export const Player = () => {
@@ -12,6 +13,8 @@ export const Player = () => {
     volume,
   } = useContext(PlayerContext);
 
+  const { setCurrentDynamicVideo } = useContext(AppContext);
+
   return (
     <>
       <YouTube
@@ -20,6 +23,9 @@ export const Player = () => {
         onReady={(e: any) => {
           setPlayer(e.target);
           e.target.setVolume(volume);
+          console.log(e.target);
+
+          console.log(e.target.getVideoData());
 
           if (
             e.target.getPlayerState() === -1 ||

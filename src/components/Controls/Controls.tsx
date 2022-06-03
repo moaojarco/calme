@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { MenusContext } from "../../contexts/MenusContext";
 import { PlayerContext } from "../../contexts/PlayerContext";
 import formatVideoDuration from "../../utils/videoDurationFormat";
 import styles from "./Controls.module.scss";
@@ -13,7 +12,6 @@ export const Controls = () => {
     currentTime,
     setCurrentTime,
   } = useContext(PlayerContext);
-  const { timeInputOpen } = useContext(MenusContext);
 
   return (
     <div className={styles["controls-container"]}>
@@ -123,9 +121,8 @@ export const Controls = () => {
         )} */}
         </div>
       )}
-      {player && timeInputOpen && (
+      {player && (
         <div className="timer">
-          <label>{formatVideoDuration(currentTime)}</label>
           <input
             type="range"
             min="0"
@@ -137,7 +134,16 @@ export const Controls = () => {
             }}
             className="time-input"
           />
-          <label>{formatVideoDuration(duration)}</label>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "60vw",
+            }}
+          >
+            <label>{formatVideoDuration(currentTime)}</label>
+            <label>{formatVideoDuration(duration)}</label>
+          </div>
         </div>
       )}
     </div>

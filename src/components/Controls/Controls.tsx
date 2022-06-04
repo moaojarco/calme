@@ -18,7 +18,6 @@ export const Controls = () => {
     setIsShuffle,
   } = useContext(PlayerContext);
 
-
   return (
     <div className={styles["controls-container"]}>
       {player && (
@@ -28,7 +27,7 @@ export const Controls = () => {
               backgroundColor: isShuffle ? "#070a12" : "transparent",
               borderRadius: "1.25rem",
               padding: ".4rem",
-              width: "3.125rem"
+              width: "3.125rem",
             }}
           >
             <svg
@@ -48,63 +47,10 @@ export const Controls = () => {
               <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"></path>
             </svg>
           </div>
-         <div> 
-          <svg
-            onClick={() => {
-              previousTrack(currentSong, setCurrentSong);
-            }}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#DBE0E6"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polygon points="19 20 9 12 19 4 19 20"></polygon>
-            <line x1="5" y1="19" x2="5" y2="5"></line>
-          </svg>
-         </div> 
-          {player && player.getPlayerState() === 1 && (
-          <div
-            style={{
-              backgroundColor: isShuffle ? "#070a12" : "transparent",
-              borderRadius: "1.25rem",
-              padding: ".5rem" 
-            }}
-          >
+          <div>
             <svg
-              className={styles["pause-btn"]}
               onClick={() => {
-                if (player) {
-                  player.pauseVideo();
-                }
-              }}
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#DBE0E6"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect x="6" y="4" width="4" height="16"></rect>
-              <rect x="14" y="4" width="4" height="16"></rect>
-            </svg>
-           </div> 
-          )}
-          {player && player.getPlayerState() !== 1 && (
-          <div
-            style={{
-              backgroundColor: isShuffle ? "#070a12" : "transparent",
-              borderRadius: "1.25rem",
-              padding: ".5rem" 
-            }}
-          >
-            <svg
-              className={styles["play-btn"]}
-              onClick={() => {
-                if (player) {
-                  player.playVideo();
-                }
+                previousTrack(currentSong, setCurrentSong);
               }}
               viewBox="0 0 24 24"
               fill="none"
@@ -113,9 +59,62 @@ export const Controls = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
             </svg>
-           </div> 
+          </div>
+          {player && player.getPlayerState() === 1 && (
+            <div
+              style={{
+                backgroundColor: "#070a12", 
+                borderRadius: "1.25rem",
+                padding: ".5rem",
+              }}
+            >
+              <svg
+                className={styles["pause-btn"]}
+                onClick={() => {
+                  if (player) {
+                    player.pauseVideo();
+                  }
+                }}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#DBE0E6"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </div>
+          )}
+          {player && player.getPlayerState() !== 1 && (
+            <div
+              style={{
+                backgroundColor: "#070a12",
+                borderRadius: "1.25rem",
+                padding: ".5rem",
+              }}
+            >
+              <svg
+                className={styles["play-btn"]}
+                onClick={() => {
+                  if (player) {
+                    player.playVideo();
+                  }
+                }}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#DBE0E6"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
           )}
           <svg
             onClick={() => {

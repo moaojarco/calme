@@ -17,9 +17,6 @@ export const SongCard = ({ song, onClick }: SongCardProps) => {
     <div
       onClick={onClick}
       className={styles["card"]}
-      style={{
-        backgroundColor: currentSong.id === song.id ? "#1a2231" : "transparent",
-      }}
     >
       <h1
         style={{

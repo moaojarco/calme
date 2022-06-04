@@ -10,7 +10,7 @@ export const Player = () => {
     setPlayer,
     setCurrentTime,
     setDuration,
-    volume,
+    volume 
   } = useContext(PlayerContext);
 
   const { setCurrentDynamicVideo } = useContext(AppContext);

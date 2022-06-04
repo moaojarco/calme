@@ -12,7 +12,7 @@ const PlayerProvider = ({ children }: any) => {
   const [player, setPlayer] = useState(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [volume, setVolume] = useState(5);
+  const [volume, setVolume] = useState(25);
 
   const [playerOptions] = useState({
     height: "1",

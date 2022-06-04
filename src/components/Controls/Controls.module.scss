@@ -59,6 +59,12 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+.volume-container {
+  svg {
+    width: 80px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   input[type="range"] {
     width: 10rem;

@@ -14,12 +14,41 @@ export const Controls = () => {
     setCurrentTime,
     volume,
     setVolume,
+    isShuffle,
+    setIsShuffle,
   } = useContext(PlayerContext);
+
 
   return (
     <div className={styles["controls-container"]}>
       {player && (
         <div>
+          <div
+            style={{
+              backgroundColor: isShuffle ? "#070a12" : "transparent",
+              borderRadius: "1.25rem",
+              padding: ".4rem",
+              width: "3.125rem"
+            }}
+          >
+            <svg
+              onClick={() => {
+                setIsShuffle(!isShuffle);
+              }}
+              stroke={isShuffle ? "#69B6A2" : "#DBE0E6"}
+              fill="none"
+              strokeWidth="1"
+              viewBox="0 0 16 16"
+              height="1.2rem"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"
+              ></path>
+              <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"></path>
+            </svg>
+          </div>
+         <div> 
           <svg
             onClick={() => {
               previousTrack(currentSong, setCurrentSong);
@@ -34,7 +63,15 @@ export const Controls = () => {
             <polygon points="19 20 9 12 19 4 19 20"></polygon>
             <line x1="5" y1="19" x2="5" y2="5"></line>
           </svg>
+         </div> 
           {player && player.getPlayerState() === 1 && (
+          <div
+            style={{
+              backgroundColor: isShuffle ? "#070a12" : "transparent",
+              borderRadius: "1.25rem",
+              padding: ".5rem" 
+            }}
+          >
             <svg
               className={styles["pause-btn"]}
               onClick={() => {
@@ -52,8 +89,16 @@ export const Controls = () => {
               <rect x="6" y="4" width="4" height="16"></rect>
               <rect x="14" y="4" width="4" height="16"></rect>
             </svg>
+           </div> 
           )}
           {player && player.getPlayerState() !== 1 && (
+          <div
+            style={{
+              backgroundColor: isShuffle ? "#070a12" : "transparent",
+              borderRadius: "1.25rem",
+              padding: ".5rem" 
+            }}
+          >
             <svg
               className={styles["play-btn"]}
               onClick={() => {
@@ -70,10 +115,11 @@ export const Controls = () => {
             >
               <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
+           </div> 
           )}
           <svg
             onClick={() => {
-              nextTrack(currentSong, setCurrentSong);
+              nextTrack(currentSong, setCurrentSong, isShuffle);
             }}
             viewBox="0 0 24 24"
             fill="none"

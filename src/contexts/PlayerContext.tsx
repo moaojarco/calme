@@ -13,6 +13,7 @@ const PlayerProvider = ({ children }: any) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(25);
+  const [isShuffle, setIsShuffle] = useState(false); 
 
   const [playerOptions] = useState({
     height: "1",
@@ -37,6 +38,8 @@ const PlayerProvider = ({ children }: any) => {
         setDuration,
         volume,
         setVolume,
+        isShuffle,
+        setIsShuffle
       }}
     >
       {children}

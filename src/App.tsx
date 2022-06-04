@@ -9,7 +9,6 @@ function App() {
     <div className="root">
       <main className="app">
         <div className="flex">
-          <Aside />
           <RightBox />
         </div>
         <Footer />

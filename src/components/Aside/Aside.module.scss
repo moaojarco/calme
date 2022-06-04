@@ -1,4 +1,49 @@
+@import "../../assets/css/variables.scss";
+
 .container {
   flex: 1;
   padding: 8px;
+
+  nav {
+    ul {
+      list-style-type: none;
+
+      li {
+        padding: 1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 20px;
+          margin-left: 5px;
+        }
+
+        &:hover {
+          background-color: $root-background;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1440px) {
 }

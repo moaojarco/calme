@@ -32,3 +32,39 @@
         }
     }
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        .song-info {
+            z-index: 5;
+            padding: 1rem;
+            display: flex;
+            position: relative;
+    
+            img {
+                width: 4.5rem;
+                border-radius: .5rem; 
+            }
+    
+            h1 {
+                font-size: .8rem;
+                font-weight: bold;
+                margin: 2rem 0 0 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 1024px) {
+  
+}
+
+@media screen and (max-width: 1280px) {
+}
+
+@media screen and (max-width: 1440px) {
+}

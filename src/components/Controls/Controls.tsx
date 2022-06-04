@@ -122,7 +122,7 @@ export const Controls = () => {
         </div>
       )}
       {player && (
-        <div className="timer">
+        <div className={styles["timer"]}>
           <input
             type="range"
             min="0"

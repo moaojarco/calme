@@ -22,8 +22,14 @@ export const Aside = () => {
 
   return (
     <aside className={styles["container"]}>
-      <>
-        {/*
+      <nav>
+        <ul>
+          <li>Home </li>
+          <li>Browse </li>
+          <li>Settings </li>
+        </ul>
+      </nav>
+      {/*
         {dynamicData &&
           dynamicData.map((video: any, idx: number) => (
             <>
@@ -58,7 +64,6 @@ export const Aside = () => {
           />
         </div>
       */}
-      </>
     </aside>
   );
 };

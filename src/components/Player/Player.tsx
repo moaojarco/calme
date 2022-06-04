@@ -35,6 +35,7 @@ export const Player = () => {
             e.target.playVideo();
           }
 
+          console.log(e.target.getDuration());
           setDuration(e.target.getDuration());
 
           setInterval(() => {

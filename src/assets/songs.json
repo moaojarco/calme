@@ -2,8 +2,8 @@
   {
     "id": 1,
     "youtube_id": "bgfKCui-Acc",
-    "cover": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/4b/99/e3/4b99e3a7-85e7-8b16-5516-e64a3ceae2c9/3701421582805.png/1200x1200bf-60.jpg",
-    "name": "Anime Lofi",
+    "cover": "https://i1.sndcdn.com/artworks-THXLkFwTReQzfqGa-r7Fmcw-t500x500.jpg",
+    "name": "Anime Lo-Fi",
     "duration": 3976
   },
   {
@@ -17,21 +17,21 @@
     "id": 16,
     "youtube_id": "ZhstyJSNKME",
     "cover": "https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-hostgator-brasil-v1-0-1%2F441%2F658441%2FixGKtIsF%2F69618f0760da4a46b4855c8c8e05fe38&methods=resize%2C1200%2C5000",
-    "name": "Brazilian Lofi",
+    "name": "Brazilian Lo-Fi",
     "duration": 3930
   },
   {
     "id": 2,
     "youtube_id": "GwyXQO0tSW4",
     "cover": "https://maisretorno.com/api/nextjs/resize-image?src=https://media.maisretorno.com/portal/wp-content/uploads/2021/04/pexels-magda-ehlers-2846076-800x450.jpg&w=1200&h=1200",
-    "name": "Chinese Lofi",
+    "name": "Chinese Lo-Fi",
     "duration": 11703
   },
   {
     "id": 3,
     "youtube_id": "ykURWvAo6Eg",
     "cover": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/c5/ef/5b/c5ef5bb8-ac67-4f91-ec65-80d1d76996d7/190296322860.jpg/1200x1200bf-60.jpg",
-    "name": "Japanese Lofi",
+    "name": "Japanese Lo-Fi",
     "duration": 3533
   },
   {
@@ -130,7 +130,14 @@
     "id": 17,
     "youtube_id": "LUGsgjksH1c",
     "cover": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/14/22/77/142277c6-469c-3f29-f74a-d5aea05479a4/cover_10213531.jpg/1200x1200bf-60.jpg",
-    "name": "Piano Lofi Beats",
+    "name": "Piano Lo-Fi Beats",
     "duration": 3600
+  },
+  {
+    "id": 21,
+    "youtube_id": "O4AXlHMsuU4",
+    "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi8jzTwzo2LkQiIZxU6Dtk6M8qUa-50Y51y4Ow6eFPE53j1DtCHul1YxqUxaVW7QUn_uU&usqp=CAU",
+    "name": "Techno Mix 2015",
+    "duration": 3690
   }
 ]

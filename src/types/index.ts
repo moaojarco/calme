@@ -1,5 +1,5 @@
 export type Song = {
-  id?: number;
+  id: number;
   youtube_id?: string;
   cover?: string;
   name?: string;

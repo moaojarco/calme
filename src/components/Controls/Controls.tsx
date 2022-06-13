@@ -125,16 +125,16 @@ export const Controls = () => {
         </div>
       )}
 
-      {player && (
+      {player.youtubePlayer && (
         <div className={styles["timer"]}>
           <input
             type="range"
             min="0"
-            max={100}
-            value={1}
+            max={player.playerInfo.duration}
+            value={player.playerInfo.currentTime}
             onChange={(e) => {
-              setCurrentTime(e.target.value);
-              player.seekTo(e.target.value);
+              dispatch(setCurrentTime(e.target.value));
+              player.youtubePlayer.seekTo(e.target.value);
             }}
             className="time-input"
           />
@@ -145,8 +145,8 @@ export const Controls = () => {
               width: "60vw",
             }}
           >
-            {/* <label>{formatVideoDuration(player.playerInfo.currentTime)}</label> */}
-            {/* <label>{formatVideoDuration(player.playerInfo.duration)}</label> */}
+            <label>{formatVideoDuration(player.playerInfo.currentTime)}</label>
+            <label>{formatVideoDuration(player.playerInfo.duration)}</label>
           </div>
         </div>
       )}

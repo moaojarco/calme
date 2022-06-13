@@ -1,6 +1,10 @@
 import YouTube from "react-youtube";
 import { useSelector, useDispatch } from "react-redux";
-import { setPlayer } from "../../features/playerStore";
+import {
+  setCurrentTime,
+  setDuration,
+  setPlayer,
+} from "../../features/playerStore";
 
 export const Player = () => {
   const dispatch = useDispatch();
@@ -19,6 +23,7 @@ export const Player = () => {
         }}
         onReady={(e: any) => {
           dispatch(setPlayer(e.target));
+          dispatch(setDuration(e.target.getDuration()));
 
           if (
             e.target.getPlayerState() === -1 ||
@@ -30,14 +35,14 @@ export const Player = () => {
 
           console.log(e.target.getDuration());
 
-          // setInterval(() => {
-          //   const currentValue = e.target.getCurrentTime();
-          //   if (typeof currentValue === "number")
-          //     setCurrentTime(e.target.getCurrentTime());
-          // }, 1000);
+          setInterval(() => {
+            const currentValue = e.target.getCurrentTime();
+            if (typeof currentValue === "number")
+              dispatch(setCurrentTime(e.target.getCurrentTime()));
+          }, 1000);
 
-          // console.log(e.target.getCurrentTime());
-          // console.log(e.target.getDuration());
+          console.log(e.target.getCurrentTime());
+          console.log(e.target.getDuration());
         }}
         onStateChange={(e) => {
           console.log(e.target.getPlayerState());

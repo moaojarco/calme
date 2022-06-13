@@ -61,6 +61,9 @@ export const playerSlice = createSlice({
     setVolume: (state, action) => {
       state.player.playerInfo.volume = action.payload;
     },
+    setDuration: (state, action) => {
+      state.player.playerInfo.duration = action.payload;
+    },
   },
 });
 
@@ -70,6 +73,7 @@ export const {
   setCurrentSong,
   setCurrentTime,
   setVolume,
+  setDuration,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;

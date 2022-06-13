@@ -1,8 +1,7 @@
-import { PlayerContext } from "../../contexts/PlayerContext";
-import { useContext } from "react";
 import { Song } from "../../types";
 import styles from "./SongCard.module.scss";
 import formatVideoDuration from "../../utils/videoDurationFormat";
+import { useSelector } from "react-redux";
 
 interface SongCardProps {
   song: Song;
@@ -11,16 +10,13 @@ interface SongCardProps {
 }
 
 export const SongCard = ({ song, onClick }: SongCardProps) => {
-  const { currentSong } = useContext(PlayerContext);
+  const playerInfo = useSelector((state: any) => state.player.player.playerInfo);
 
   return (
-    <div
-      onClick={onClick}
-      className={styles["card"]}
-    >
+    <div onClick={onClick} className={styles["card"]}>
       <h1
         style={{
-          color: currentSong.id === song.id ? "#fff" : "#424851",
+          color: playerInfo.currentSong.id === song.id ? "#fff" : "#424851",
         }}
       >
         {song.name}

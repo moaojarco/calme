@@ -1,22 +1,16 @@
-import { useContext } from "react";
-import { PlayerContext } from "../../contexts/PlayerContext";
 import { previousTrack, nextTrack } from "../../utils/playerFunctions";
 import formatVideoDuration from "../../utils/videoDurationFormat";
 import styles from "./Controls.module.scss";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setIsShuffle,
+  setCurrentTime,
+  setVolume,
+} from "../../features/playerStore";
 
 export const Controls = () => {
-  const {
-    player,
-    currentSong,
-    setCurrentSong,
-    duration,
-    currentTime,
-    setCurrentTime,
-    volume,
-    setVolume,
-    isShuffle,
-    setIsShuffle,
-  } = useContext(PlayerContext);
+  const player = useSelector((state: any) => state.player.player);
+  const dispatch = useDispatch();
 
   return (
     <div className={styles["controls-container"]}>
@@ -24,7 +18,9 @@ export const Controls = () => {
         <div>
           <div
             style={{
-              backgroundColor: isShuffle ? "#070a12" : "transparent",
+              backgroundColor: player.playerInfo.isShuffle
+                ? "#070a12"
+                : "transparent",
               borderRadius: "1.25rem",
               padding: ".4rem",
               width: "3.125rem",
@@ -32,9 +28,9 @@ export const Controls = () => {
           >
             <svg
               onClick={() => {
-                setIsShuffle(!isShuffle);
+                dispatch(setIsShuffle());
               }}
-              stroke={isShuffle ? "#69B6A2" : "#DBE0E6"}
+              stroke={player.playerInfo.isShuffle ? "#69B6A2" : "#DBE0E6"}
               fill="none"
               strokeWidth="1"
               viewBox="0 0 16 16"
@@ -50,7 +46,7 @@ export const Controls = () => {
           <div>
             <svg
               onClick={() => {
-                previousTrack(currentSong, setCurrentSong);
+                console.log("Previous Track");
               }}
               viewBox="0 0 24 24"
               fill="none"
@@ -63,10 +59,11 @@ export const Controls = () => {
               <line x1="5" y1="19" x2="5" y2="5"></line>
             </svg>
           </div>
-          {player && player.getPlayerState() === 1 && (
+          {player.youtubePlayer &&
+          player.youtubePlayer.getPlayerState() === 1 ? (
             <div
               style={{
-                backgroundColor: "#070a12", 
+                backgroundColor: "#070a12",
                 borderRadius: "1.25rem",
                 padding: ".5rem",
               }}
@@ -74,9 +71,7 @@ export const Controls = () => {
               <svg
                 className={styles["pause-btn"]}
                 onClick={() => {
-                  if (player) {
-                    player.pauseVideo();
-                  }
+                  player.youtubePlayer.pauseVideo();
                 }}
                 viewBox="0 0 24 24"
                 fill="none"
@@ -89,8 +84,7 @@ export const Controls = () => {
                 <rect x="14" y="4" width="4" height="16"></rect>
               </svg>
             </div>
-          )}
-          {player && player.getPlayerState() !== 1 && (
+          ) : (
             <div
               style={{
                 backgroundColor: "#070a12",
@@ -101,9 +95,7 @@ export const Controls = () => {
               <svg
                 className={styles["play-btn"]}
                 onClick={() => {
-                  if (player) {
-                    player.playVideo();
-                  }
+                  player.youtubePlayer.playVideo();
                 }}
                 viewBox="0 0 24 24"
                 fill="none"
@@ -118,7 +110,7 @@ export const Controls = () => {
           )}
           <svg
             onClick={() => {
-              nextTrack(currentSong, setCurrentSong, isShuffle);
+              console.log("Next");
             }}
             viewBox="0 0 24 24"
             fill="none"
@@ -132,13 +124,14 @@ export const Controls = () => {
           </svg>
         </div>
       )}
+
       {player && (
         <div className={styles["timer"]}>
           <input
             type="range"
             min="0"
-            max={duration}
-            value={currentTime}
+            max={100}
+            value={1}
             onChange={(e) => {
               setCurrentTime(e.target.value);
               player.seekTo(e.target.value);
@@ -152,8 +145,8 @@ export const Controls = () => {
               width: "60vw",
             }}
           >
-            <label>{formatVideoDuration(currentTime)}</label>
-            <label>{formatVideoDuration(duration)}</label>
+            {/* <label>{formatVideoDuration(player.playerInfo.currentTime)}</label> */}
+            {/* <label>{formatVideoDuration(player.playerInfo.duration)}</label> */}
           </div>
         </div>
       )}
@@ -168,12 +161,10 @@ export const Controls = () => {
           min="0"
           max="100"
           step="0.01"
-          value={volume}
+          value={player.playerInfo.volume}
           onChange={(e) => {
-            player.unMute();
-            // console.log(player.getPlayerState());
-            player.setVolume(e.target.value);
-            setVolume(e.target.value);
+            dispatch(setVolume(e.target.value));
+            player.youtubePlayer.setVolume(e.target.value);
           }}
         />
       </div>

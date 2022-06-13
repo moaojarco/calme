@@ -1,31 +1,24 @@
-import { useContext } from "react";
 import YouTube from "react-youtube";
-import { AppContext } from "../../contexts/AppContext";
-import { PlayerContext } from "../../contexts/PlayerContext";
+import { useSelector, useDispatch } from "react-redux";
+import { setPlayer } from "../../features/playerStore";
 
 export const Player = () => {
-  const {
-    currentSong,
-    playerOptions,
-    setPlayer,
-    setCurrentTime,
-    setDuration,
-    volume 
-  } = useContext(PlayerContext);
-
-  const { setCurrentDynamicVideo } = useContext(AppContext);
+  const dispatch = useDispatch();
+  const player = useSelector((state: any) => state.player.player);
 
   return (
     <>
       <YouTube
-        videoId={currentSong.youtube_id}
-        opts={playerOptions}
+        videoId={player.playerInfo.currentSong.youtube_id}
+        opts={{
+          height: "1",
+          width: "1",
+          playerVars: {
+            autoplay: 1,
+          },
+        }}
         onReady={(e: any) => {
-          setPlayer(e.target);
-          e.target.setVolume(volume);
-          console.log(e.target);
-
-          console.log(e.target.getVideoData());
+          dispatch(setPlayer(e.target));
 
           if (
             e.target.getPlayerState() === -1 ||
@@ -36,13 +29,12 @@ export const Player = () => {
           }
 
           console.log(e.target.getDuration());
-          setDuration(e.target.getDuration());
 
-          setInterval(() => {
-            const currentValue = e.target.getCurrentTime();
-            if (typeof currentValue === "number")
-              setCurrentTime(e.target.getCurrentTime());
-          }, 1000);
+          // setInterval(() => {
+          //   const currentValue = e.target.getCurrentTime();
+          //   if (typeof currentValue === "number")
+          //     setCurrentTime(e.target.getCurrentTime());
+          // }, 1000);
 
           // console.log(e.target.getCurrentTime());
           // console.log(e.target.getDuration());

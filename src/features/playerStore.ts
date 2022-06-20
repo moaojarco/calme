@@ -29,7 +29,7 @@ const initialState: PlayerStore = {
       currentSong: songs[Math.floor(Math.random() * songs.length)],
       currentTime: 0,
       duration: 0,
-      volume: 30,
+      volume: 20,
       isShuffle: false,
       playerOptions: {
         height: "1",

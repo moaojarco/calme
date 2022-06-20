@@ -6,6 +6,7 @@ import {
   setIsShuffle,
   setCurrentTime,
   setVolume,
+  setCurrentSong,
 } from "../../features/playerStore";
 
 export const Controls = () => {
@@ -46,7 +47,8 @@ export const Controls = () => {
           <div>
             <svg
               onClick={() => {
-                console.log("Previous Track");
+                dispatch(setCurrentSong(previousTrack(player.playerInfo.currentSong)))
+               console.log("Previous Track");
               }}
               viewBox="0 0 24 24"
               fill="none"
@@ -110,7 +112,7 @@ export const Controls = () => {
           )}
           <svg
             onClick={() => {
-              console.log("Next");
+              dispatch(setCurrentSong(nextTrack(player.playerInfo.currentSong, player.playerInfo.isShuffle)));
             }}
             viewBox="0 0 24 24"
             fill="none"
